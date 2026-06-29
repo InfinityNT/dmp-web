@@ -45,6 +45,10 @@ export const installSteps: { n: string; title: string; body: string; icon: strin
   { n: "3", title: "Open", body: "DMP registers as a background service that starts at boot. Visit localhost:8000 and sign in.", icon: "Globe" },
 ];
 
+// Honest heads-up: the installers are new and not runtime-tested on every OS.
+export const installNote =
+  "The installers are brand-new and built automatically — only macOS has been tested end-to-end, so the Windows and Linux builds may hit rough edges. For the most reliable setup, use the clone-and-run method below.";
+
 // Secondary: install from source / manage the running service from the CLI.
 export const cli: string[] = [
   "# prefer source? clone and run one script",

@@ -1,6 +1,7 @@
 "use client";
 
-import { installSteps, cli } from "@/lib/content";
+import { TriangleAlert } from "lucide-react";
+import { installSteps, cli, installNote } from "@/lib/content";
 import { Icon } from "@/lib/icons";
 import { Reveal } from "./Reveal";
 
@@ -30,6 +31,13 @@ export function Install() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.08} className="callout">
+          <span className="callout__icon"><TriangleAlert size={18} /></span>
+          <p>
+            <strong>Installers are new.</strong> {installNote}
+          </p>
+        </Reveal>
 
         <Reveal delay={0.1} className="install-cta">
           <a href="#download" className="btn btn-accent">Get the installer</a>

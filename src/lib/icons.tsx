@@ -10,6 +10,9 @@ import {
   MonitorDown,
   Apple,
   Terminal,
+  Download,
+  MousePointerClick,
+  Globe,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,6 +28,9 @@ const MAP: Record<string, LucideIcon> = {
   MonitorDown,
   Apple,
   Terminal,
+  Download,
+  MousePointerClick,
+  Globe,
 };
 
 export function Icon({ name, size = 22 }: { name: string; size?: number }) {

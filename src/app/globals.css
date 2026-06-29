@@ -265,6 +265,33 @@ a { color: inherit; }
 .tline--b::before { content: ""; }
 .tline--b { height: 0.6rem; }
 
+/* install steps + CTA */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.step {
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: var(--surface);
+  padding: 1.4rem;
+}
+.step__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem; }
+.step__num {
+  font-family: var(--font-display), sans-serif; font-weight: 700;
+  font-size: 1.6rem; color: var(--accent); line-height: 1;
+}
+.step__icon { color: var(--text-3); }
+.step h3 { font-size: var(--fs-h3); margin-bottom: 0.35rem; }
+.step p { color: var(--text-2); font-size: 0.97rem; margin: 0; }
+
+.install-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.install-cta__note { color: var(--text-3); font-size: 0.82rem; }
+.terminal--solo { max-width: 680px; }
+
 /* ── download ─────────────────────────────────────────────────── */
 .dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 @media (max-width: 700px) { .dl-grid { grid-template-columns: 1fr; } }

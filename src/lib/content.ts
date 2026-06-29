@@ -38,9 +38,21 @@ export const shots: Shot[] = [
   { src: "/screenshots/settings.png", title: "Settings", tag: "DMP-SET-06", blurb: "Security, sessions, backups and data integrity." },
 ];
 
-export const install: { os: string; tag: string; lines: string[] }[] = [
-  { os: "Windows", tag: "WIN", lines: ["# Run install.bat as Administrator", "install.bat", "", "# …or register the service directly:", "python dmpctl.py install"] },
-  { os: "macOS / Linux", tag: "NIX", lines: ["./install.sh", "", "# manage the service anytime:", "python dmpctl.py status"] },
+// Primary install flow: download the installer and run it.
+export const installSteps: { n: string; title: string; body: string; icon: string }[] = [
+  { n: "1", title: "Download", body: "Grab the installer for your platform — no Python or dependencies to set up first.", icon: "Download" },
+  { n: "2", title: "Run it", body: "Open it and click Start. Unsigned, so: macOS right-click → Open; Windows “More info → Run anyway”.", icon: "MousePointerClick" },
+  { n: "3", title: "Open", body: "DMP registers as a background service that starts at boot. Visit localhost:8000 and sign in.", icon: "Globe" },
+];
+
+// Secondary: install from source / manage the running service from the CLI.
+export const cli: string[] = [
+  "# prefer source? clone and run one script",
+  "git clone https://github.com/InfinityNT/it.git",
+  "cd it && ./install.sh        # install.bat on Windows",
+  "",
+  "# manage the service anytime",
+  "dmpctl start | stop | status",
 ];
 
 export const downloads: { os: string; icon: string; tag: string; note: string; file: string }[] = [

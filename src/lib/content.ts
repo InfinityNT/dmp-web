@@ -43,8 +43,13 @@ export const install: { os: string; tag: string; lines: string[] }[] = [
   { os: "macOS / Linux", tag: "NIX", lines: ["./install.sh", "", "# manage the service anytime:", "python dmpctl.py status"] },
 ];
 
-export const downloads: { os: string; icon: string; tag: string; note: string }[] = [
-  { os: "Windows", icon: "MonitorDown", tag: "WIN-X64", note: "install.bat · runs as a Windows service" },
-  { os: "macOS", icon: "Apple", tag: "MACOS", note: "install.sh · launchd service" },
-  { os: "Linux", icon: "Terminal", tag: "LINUX", note: "install.sh · systemd unit" },
+export const downloads: { os: string; icon: string; tag: string; note: string; file: string }[] = [
+  { os: "Windows", icon: "MonitorDown", tag: "WIN-X64", note: "Installer · runs as a Windows service", file: "DMP-Setup.exe" },
+  { os: "macOS", icon: "Apple", tag: "MACOS", note: "Disk image · launchd service", file: "DMP-macos.dmg" },
+  { os: "Linux", icon: "Terminal", tag: "LINUX", note: "AppImage · systemd unit", file: "DMP-linux-x86_64.AppImage" },
 ];
+
+// Per-OS installers are published as GitHub Release assets by the it repo's
+// "Build installers" workflow (tag a vX.Y.Z to produce them).
+export const releaseAsset = (file: string) =>
+  `${site.repo}/releases/latest/download/${file}`;

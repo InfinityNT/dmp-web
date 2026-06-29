@@ -2,7 +2,7 @@
 
 import { Github, Download as DownloadIcon, Copy, Check } from "lucide-react";
 import { useState } from "react";
-import { downloads, site } from "@/lib/content";
+import { downloads, releaseAsset, site } from "@/lib/content";
 import { Icon } from "@/lib/icons";
 import { Reveal } from "./Reveal";
 
@@ -32,7 +32,7 @@ export function Download() {
         <div className="dl-grid">
           {downloads.map((d, i) => (
             <Reveal key={d.os} delay={i * 0.06}>
-              <a className="dl-card" href={site.repo} target="_blank" rel="noreferrer">
+              <a className="dl-card" href={releaseAsset(d.file)}>
                 <span className="dl-card__icon"><Icon name={d.icon} size={26} /></span>
                 <span className="dl-card__os">{d.os}</span>
                 <span className="dl-card__note mono">{d.note}</span>

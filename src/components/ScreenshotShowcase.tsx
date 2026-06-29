@@ -27,9 +27,9 @@ export function ScreenshotShowcase() {
 
         <div className="showcase">
           {shots.map((s, i) => (
-            <Reveal key={s.tag} delay={(i % 3) * 0.06}>
+            <Reveal key={s.tag} delay={(i % 3) * 0.06} className="shot">
               <TiltCard max={8}>
-                <button className="shot" onClick={() => setActive(s)} aria-label={`Enlarge ${s.title}`}>
+                <button className="shot__btn" onClick={() => setActive(s)} aria-label={`Enlarge ${s.title}`}>
                   <figure className="shot-frame" style={{ margin: 0 }}>
                     <div className="shot-frame__bar">
                       <span className="shot-frame__dot" />
@@ -37,15 +37,17 @@ export function ScreenshotShowcase() {
                       <span className="shot-frame__dot" />
                       <span className="tag" style={{ marginLeft: "auto" }}>{s.tag}</span>
                     </div>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={s.src} alt={s.title} loading="lazy" />
+                    <div className="shot-frame__media">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={s.src} alt={s.title} loading="lazy" />
+                    </div>
                   </figure>
-                  <div className="shot__meta">
-                    <span className="shot__title">{s.title}</span>
-                    <span className="shot__blurb">{s.blurb}</span>
-                  </div>
                 </button>
               </TiltCard>
+              <div className="shot__meta">
+                <span className="shot__title">{s.title}</span>
+                <span className="shot__blurb">{s.blurb}</span>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -15,7 +15,6 @@ export function Footer() {
         <nav className="footer__links">
           <a href="#features">Features</a>
           <a href="#screenshots">Screenshots</a>
-          <a href="#install">Install</a>
           <a href="#download">Download</a>
           <a href={site.repo} target="_blank" rel="noreferrer">GitHub</a>
         </nav>

@@ -23,7 +23,6 @@ export function Nav() {
         <div className="nav__links">
           <a href="#features">Features</a>
           <a href="#screenshots">Screenshots</a>
-          <a href="#install">Install</a>
           <a href="#download">Download</a>
         </div>
         <a

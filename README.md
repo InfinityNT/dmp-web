@@ -38,3 +38,7 @@ Host the `out/` folder anywhere:
 - Screenshots in `public/screenshots/` are copied from the app's design assets.
 - Download buttons point at the DMP GitHub repo / ZIP today; swap them to GitHub
   Release assets in `src/lib/content.ts` once you publish releases.
+
+## License
+
+Released under the [MIT License](LICENSE) — © 2026 Eduardo Murillo.
